@@ -12,13 +12,13 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+require('./server/db/dbConfig')
+// const Spacecraft = require('./router/spaceCraft');
 
-const Spacecraft = require('./router/spaceCraft');
-
-app.use('/spacecraft', Spacecraft);
+// app.use('/spacecraft', Spacecraft);
 
 app.listen(serverPort, function () {
-    console.log(' Backend Application Running at ', serverPort, '!');
+    console.log('Backend Application Running at ', serverPort, '!');
 });
 
 app.use(function (err, req, res, next) {
